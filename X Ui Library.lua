@@ -593,6 +593,6 @@ function Library:CreateWindow(name)
 						end
 						return XLibrary
 					end
-return Library
+					return Library
 
 ----------------------------------------------------------------
