@@ -1,3 +1,5 @@
+local Library = {}
+
 local mouse = game.Players.LocalPlayer:GetMouse()
 local uis = game:GetService("UserInputService")
 
