@@ -193,7 +193,14 @@ function Library:CreateWindow(name)
 			TextButton.MouseButton1Click:Connect(function()
 				pcall(callback)
 			end)
+
+		local ButtonRefresh = {}
+
+		function ButtonRefresh:UpdateButton(newTitle)
+			TextButtonText.Text = newTitle
 		end
+		return ButtonRefresh
+	end
 
 		function Elements:NewTextLabel(tlname, callback)
 			callback = callback or function() end
