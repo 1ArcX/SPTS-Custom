@@ -79,7 +79,7 @@ function Library:CreateWindow(name)
 		local Tab = Instance.new("TextButton")
 		local ScrollingFrame = Instance.new("ScrollingFrame")
 		local UIGridLayout2 = Instance.new("UIGridLayout")
-		local TextLabel = Instance.new("TextLabel")
+		local TabText = Instance.new("TextLabel")
 
 		Tab.Name = TabName
 		Tab.Parent = Tabs
@@ -111,18 +111,18 @@ function Library:CreateWindow(name)
 		UIGridLayout2.CellPadding = UDim2.new(0, 0, 0.00999999978, 0)
 		UIGridLayout2.CellSize = UDim2.new(0.899999976, 0, 0.0299999993, 0)
 
-		TextLabel.Parent = ScrollingFrame
-		TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		TextLabel.BackgroundTransparency = 1.000
-		TextLabel.Size = UDim2.new(0.900000036, 0, 0.0909629688, 0)
-		TextLabel.Font = Enum.Font.SourceSansBold
-		TextLabel.Text = TabName
-		TextLabel.TextColor3 = Color3.fromRGB(255,255,255)
-		TextLabel.TextScaled = true
-		TextLabel.TextSize = 14.000
-		TextLabel.TextStrokeTransparency = 0.000
-		TextLabel.TextWrapped = true
-		TextLabel.ZIndex = 103
+		TabText.Parent = ScrollingFrame
+		TabText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabText.BackgroundTransparency = 1.000
+		TabText.Size = UDim2.new(0.900000036, 0, 0.0909629688, 0)
+		TabText.Font = Enum.Font.SourceSansBold
+		TabText.Text = TabName
+		TabText.TextColor3 = Color3.fromRGB(255,255,255)
+		TabText.TextScaled = true
+		TabText.TextSize = 14.000
+		TabText.TextStrokeTransparency = 0.000
+		TabText.TextWrapped = true
+		TabText.ZIndex = 103
 
 		Tab.MouseButton1Click:Connect(function()
 			for i,v in pairs(Frame:GetChildren()) do
@@ -193,6 +193,26 @@ function Library:CreateWindow(name)
 			TextButton.MouseButton1Click:Connect(function()
 				pcall(callback)
 			end)
+		end
+
+		function Elements:NewTextLabel(tlname, callback)
+			callback = callback or function() end
+
+			local TextLabel = Instance.new("TextLabel")
+
+			TextLabel.Parent = ScrollingFrame
+			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundTransparency = 1.000
+			TextLabel.Size = UDim2.new(0, 200, 0, 50)
+			TextLabel.Font = Enum.Font.SourceSansBold
+			TextLabel.TextColor3 = Color3.fromRGB(255, 51, 54)
+			TextLabel.TextScaled = true
+			TextLabel.TextSize = 14.000
+			TextLabel.TextWrapped = true
+			TextLabel.Text = tlname
+			TextLabel.ZIndex = 105
+
+			pcall(callback, TextLabel)
 		end
 
 			function Elements:NewToggle(tname, callback)
