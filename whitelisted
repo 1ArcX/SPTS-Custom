@@ -20,3 +20,4 @@ local admins = {
 1019343619,
 1253481951,
 2816360150}
+return admins
