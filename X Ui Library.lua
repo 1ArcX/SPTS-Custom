@@ -3,6 +3,12 @@ local Library = {}
 local mouse = game.Players.LocalPlayer:GetMouse()
 local uis = game:GetService("UserInputService")
 
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+	if v.Name == "X" then
+		v:Destroy()
+	end
+end
+
 function Library:CreateWindow(name)
 	local X = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
@@ -88,7 +94,7 @@ function Library:CreateWindow(name)
 		Tab.Size = UDim2.new(1, 0, 0.100000001, 0)
 		Tab.Font = Enum.Font.SourceSansBold
 		Tab.Text = TabName
-		Tab.TextColor3 = Color3.fromRGB(255,255,255)
+		Tab.TextColor3 = Color3.fromRGB(128, 128, 128)
 		Tab.TextScaled = true
 		Tab.TextSize = 14.000
 		Tab.TextWrapped = true
@@ -123,6 +129,17 @@ function Library:CreateWindow(name)
 		TabText.TextStrokeTransparency = 0.000
 		TabText.TextWrapped = true
 		TabText.ZIndex = 103
+
+		Tab.MouseButton1Click:Connect(function()
+			for i,v in pairs(Tabs:GetChildren()) do
+				if v.ClassName == "TextButton" then
+				v.TextColor3 = Color3.fromRGB(128, 128, 128)
+				end
+				Tab.TextColor3 = Color3.fromRGB(255,255,255)
+			end
+		end)
+
+
 
 		Tab.MouseButton1Click:Connect(function()
 			for i,v in pairs(Frame:GetChildren()) do
@@ -294,6 +311,74 @@ function Library:CreateWindow(name)
 				end
 				return switchactions
 			end
+			
+			-- function Elements:NewKeybind(kname, first, callback)
+			-- 	callback = callback or function() end
+			-- 	local oldKey = first.Name
+
+			-- 	local TextBox = Instance.new("ImageLabel")
+			-- 	local TBText = Instance.new("TextLabel")
+			-- 	local TextBox_2 = Instance.new("TextBox")
+
+			-- 	local ms = game.Players.LocalPlayer:GetMouse()
+
+			-- 	TextBox.Name = kname
+			-- 	TextBox.Parent = ScrollingFrame
+			-- 	TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			-- 	TextBox.BackgroundTransparency = 1.000
+			-- 	TextBox.Position = UDim2.new(0.109489053, 0, 0.381107479, 0)
+			-- 	TextBox.Size = UDim2.new(0.420620441, 0, 0.0798045695, 0)
+			-- 	TextBox.Image = "rbxassetid://3570695787"
+			-- 	TextBox.ImageTransparency = 1.000
+			-- 	TextBox.ScaleType = Enum.ScaleType.Slice
+			-- 	TextBox.SliceCenter = Rect.new(100, 100, 100, 100)
+			-- 	TextBox.SliceScale = 0.120
+			-- 	TextBox.ZIndex = 103
+
+			-- 	TBText.Name = kname .."text"
+			-- 	TBText.Parent = TextBox
+			-- 	TBText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			-- 	TBText.BackgroundTransparency = 1.000
+			-- 	TBText.Position = UDim2.new(0, 0, 0.224489346, 0)
+			-- 	TBText.Size = UDim2.new(0.614621103, 0, 0.571428716, 0)
+			-- 	TBText.Font = Enum.Font.SourceSans
+			-- 	TBText.Text = kname
+			-- 	TBText.TextColor3 = Color3.fromRGB(255, 255, 255)
+			-- 	TBText.TextScaled = true
+			-- 	TBText.TextSize = 14.000
+			-- 	TBText.TextWrapped = true
+			-- 	TBText.ZIndex = 104
+
+			-- 	TextBox_2.Parent = TextBox
+			-- 	TextBox_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			-- 	TextBox_2.Position = UDim2.new(0.680999994, 0, 0.224000007, 0)
+			-- 	TextBox_2.Size = UDim2.new(0.319000006, 0, 0.57099998, 0)
+			-- 	TextBox_2.Font = Enum.Font.SourceSans
+			-- 	TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+			-- 	TextBox_2.TextScaled = true
+			-- 	TextBox_2.TextSize = 14.000
+			-- 	TextBox_2.TextWrapped = true
+			-- 	TextBox_2.ZIndex = 104
+			-- 	TextBox_2.Text = "oldkey"
+
+			-- 	if not focusing then
+			-- 		TextBox_2.Text = ". . ."
+			-- 		local a, b = game:GetService('UserInputService').InputBegan:wait();
+			-- 		if a.KeyCode.Name ~= "Unknown" then
+			-- 			TextBox_2.Text = a.KeyCode.Name
+			-- 			oldKey = a.KeyCode.Name;
+			-- 		end
+			-- 	end
+	
+			-- game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
+			-- 	oldkey = current
+			-- 	if not ok then 
+			-- 		if current.KeyCode.Name == oldKey then
+			-- 			callback()
+			-- 		end
+			-- 	end
+			-- end)
+			-- end
 
 				function Elements:NewTextBox(tbname, callback)
 					callback = callback or function() end
