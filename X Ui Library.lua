@@ -80,7 +80,7 @@ function Library:CreateWindow(name)
 	function SetLogo(ImageId)
 		local Logo = Instance.new("ImageLabel")
 
-		Logo.Parent = game.StarterGui.X
+		Logo.Parent = X
 		Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Logo.BackgroundTransparency = 1.000
 		Logo.Position = UDim2.new(0.739165962, 0, 0.0504885986, 0)
