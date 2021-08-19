@@ -39,7 +39,7 @@ function Library:CreateWindow(name)
 	Name.Parent = X
 	Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Name.BackgroundTransparency = 1.000
-	Name.Position = UDim2.new(0.844525552, 0, 0.0293159597, 0)
+	Name.Position = UDim2.new(0.828, 0, 0.05, 0)
 	Name.Size = UDim2.new(0.163, 0, 0.106, 0)
 	Name.Font = Enum.Font.SourceSansBold
 	Name.TextColor3 = Color3.fromRGB(255, 76, 79)
