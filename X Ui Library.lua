@@ -40,7 +40,7 @@ function Library:CreateWindow(name)
 	Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Name.BackgroundTransparency = 1.000
 	Name.Position = UDim2.new(0.844525552, 0, 0.0293159597, 0)
-	Name.Size = UDim2.new(0.139051148, 0, 0.0960912034, 0)
+	Name.Size = UDim2.new(0.163, 0, 0.106, 0)
 	Name.Font = Enum.Font.SourceSansBold
 	Name.TextColor3 = Color3.fromRGB(255, 76, 79)
 	Name.TextScaled = true
@@ -76,6 +76,17 @@ function Library:CreateWindow(name)
 			X.Enabled = not X.Enabled
 		end
 	end)
+
+	function SetLogo(ImageId)
+		local Logo = Instance.new("ImageLabel")
+
+		Logo.Parent = game.StarterGui.X
+		Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Logo.BackgroundTransparency = 1.000
+		Logo.Position = UDim2.new(0.739165962, 0, 0.0504885986, 0)
+		Logo.Size = UDim2.new(0.066, 0, 0.117, 0)
+		Logo.Image = ImageId
+	end
 
 	local XLibrary = {}
 
