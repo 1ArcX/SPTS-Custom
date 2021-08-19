@@ -1,1 +1,5 @@
-
+local Whitelisted = {
+375960249,
+528326376
+}
+return Whitelisted
