@@ -1,3 +1,5 @@
+-- Releasing Soon!
+
 local Library = {}
 
 local mouse = game.Players.LocalPlayer:GetMouse()
