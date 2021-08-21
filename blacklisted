@@ -1,4 +1,4 @@
-lcoal Blacklisted = {
+local Blacklisted = {
 885810670
 }
 return Blacklisted
