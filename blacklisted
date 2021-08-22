@@ -1,4 +1,4 @@
 local Blacklisted = {
-Game.Players:GetNameFromUserIdAsync(885810670)
+1310998423
 }
 return Blacklisted
