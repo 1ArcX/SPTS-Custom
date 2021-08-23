@@ -1,5 +1,6 @@
 local Whitelisted = {
 375960249,
-528326376
+528326376,
+739882441
 }
 return Whitelisted
