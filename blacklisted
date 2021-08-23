@@ -1,4 +1,5 @@
 local Blacklisted = {
-139381523
+139381523,
+1253481951
 }
 return Blacklisted
