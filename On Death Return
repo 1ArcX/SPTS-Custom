@@ -1,4 +1,5 @@
 				wait(0.5)
+				local player = game.Players.LocalPlayer
 				player.Character.Humanoid.Died:Connect(function()
 					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
 					local PosX = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X
