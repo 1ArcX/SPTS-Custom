@@ -1,5 +1,3 @@
-				ODRButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
-				ODRButton.Text = "On Death Return (ON)"
 				wait(0.5)
 				player.Character.Humanoid.Died:Connect(function()
 					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
