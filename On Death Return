@@ -1,4 +1,23 @@
-			while OnDeathReturn == true do
+		function LoadSaves()
+			local success, errorsend =
+				pcall(
+				function()
+					saves = game:GetService("HttpService"):JSONDecode(readfile("X.lua"))
+				end
+			)
+			if not success then
+				LoadDefaults()
+				UpdateSaves()
+				return
+			end
+			OnDeathReturn = saves.OnDeathReturn
+		end
+		
+		if writefile and readfile then
+			LoadSaves()
+		end
+		
+				while OnDeathReturn == true do
 				wait(0.5)
 				local player = game.Players.LocalPlayer
 				player.Character.Humanoid.Died:Connect(function()
