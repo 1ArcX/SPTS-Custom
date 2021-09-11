@@ -1,4 +1,0 @@
-local Blacklisted = {
-139381523
-}
-return Blacklisted
